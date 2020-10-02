@@ -1,7 +1,7 @@
 import express, { Router, Request, Response } from 'express';
 import bodyParser from 'body-parser';
 
-import { Car, cars as cars_list } from './cars';
+import { Car, cars as cars_list } from './cars'; // why braces?
 
 (async () => {
   let cars:Car[]  = cars_list;
@@ -16,7 +16,7 @@ import { Car, cars as cars_list } from './cars';
   app.use(bodyParser.json()); 
 
   // Root URI call
-  app.get( "/", ( req: Request, res: Response ) => {
+  app.get( "/", ( req: Request, res: Response ) => {  
     res.status(200).send("Welcome to the Cloud!");
   } );
 
